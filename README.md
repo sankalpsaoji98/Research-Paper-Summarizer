@@ -86,10 +86,6 @@ You can customize the application by modifying the `style.css` file for styling 
 
 Contributions are welcome! Please fork the repository and create a pull request with your changes. For major changes, please open an issue first to discuss what you would like to change.
 
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
-
 ## Contact
 
-If you have any questions, feel free to contact me at [your-email@example.com](mailto:your-email@example.com).
+If you have any questions, feel free to contact me here.
