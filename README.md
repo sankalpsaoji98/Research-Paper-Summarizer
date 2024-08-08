@@ -1,7 +1,5 @@
 # Research Paper Summarizer
 
-![Logo](static/Untitled%20design.png)
-
 ## Overview
 
 The Research Paper Summarizer is a web application that helps users quickly fetch and summarize the latest research papers from arXiv. It’s an ideal tool for researchers, students, and anyone interested in staying up-to-date with the latest scientific advancements. Simply enter a research topic, specify the number of papers you want to fetch, and the application will do the rest!
