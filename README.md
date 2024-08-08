@@ -70,11 +70,13 @@ You can also download the full text of the research papers in PDF format using t
 
 ### Homepage
 
-![Homepage](static/screenshots/homepage.png)
+<img width="799" alt="Screenshot 2024-08-08 at 7 53 08 PM" src="https://github.com/user-attachments/assets/5674c4d4-6918-4eaf-95c4-fcc9bd9927a2">
+
 
 ### Results Page
 
-![Results](static/screenshots/results.png)
+<img width="747" alt="Screenshot 2024-08-08 at 7 53 03 PM" src="https://github.com/user-attachments/assets/4f290112-3a71-49fb-bd8f-60676b902eca">
+
 
 ## Customization
 
