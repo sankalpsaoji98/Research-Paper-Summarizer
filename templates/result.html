@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Paper Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function summarizePaper(paperUrl, button) {
+            fetch('/summarize_paper', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: 'paper_url=' + encodeURIComponent(paperUrl)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.summary) {
+                    const summaryElement = document.createElement('div');
+                    summaryElement.classList.add('summary');
+                    summaryElement.innerHTML = `<strong>Summary:</strong> ${data.summary}`;
+                    button.parentElement.appendChild(summaryElement);
+                    summaryElement.style.animation = 'popIn 0.5s';
+                    button.disabled = true;
+                } else {
+                    alert('Error: ' + data.summary);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Research Papers on "{{ topic }}"</h1>
+        <ul>
+            {% for paper in papers %}
+            <li>
+                <h2>{{ paper.title }}</h2>
+                <p><strong>Authors:</strong> {{ paper.authors | join(', ') }}</p>
+                <p><strong>Published:</strong> {{ paper.published }}</p>
+                <div class="button-container">
+                    <button class="summarize-button" onclick="summarizePaper('{{ paper.pdf_url }}', this)">Summarize</button>
+                    <a href="{{ paper.pdf_url }}" class="download-button" target="_blank">Download PDF</a>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+        <a href="/" class="back-button">Go back</a>
+    </div>
+</body>
+</html>

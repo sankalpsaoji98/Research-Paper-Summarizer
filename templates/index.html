@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Paper Summarizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='Logo.png') }}" alt="Logo">
+        </div>
+        <h1>Welcome to Research Paper Summarizer</h1>
+        <p class="description">
+            Our tool helps you quickly fetch and summarize the latest research papers from arXiv. Enter a research topic and the number of papers you want to analyze, and we'll do the rest. This tool is perfect for researchers, students, and anyone interested in staying up-to-date with the latest scientific advancements.
+        </p>
+        <form action="/fetch_papers" method="POST">
+            <label for="topic">Enter the research topic:</label>
+            <input type="text" id="topic" name="topic" placeholder="e.g., Artificial Intelligence" required>
+            
+            <label for="max_results">Enter the number of papers to fetch:</label>
+            <input type="number" id="max_results" name="max_results" placeholder="e.g., 5" required>
+            
+            <button type="submit">Fetch Papers</button>
+        </form>
+    </div>
+</body>
+</html>
